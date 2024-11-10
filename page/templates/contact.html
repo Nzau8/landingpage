@@ -1,0 +1,39 @@
+{% load static %}
+{% extends 'layout.html' %}
+
+{% block title %}Contact - Start Bootstrap Theme{% endblock %}
+
+{% block content %}
+    <section class="page-section bg-primary text-white mb-0" id="contact">
+        <div class="container">
+            <h2 class="page-section-heading text-center text-uppercase text-white">Contact</h2>
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form id="contactForm" name="contactForm" method="POST">
+                        {% csrf_token %}
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="name" type="text" placeholder="Your Name" required />
+                            <label for="name">Your Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="email" type="email" placeholder="Your Email" required />
+                            <label for="email">Your Email</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="message" placeholder="Your Message" style="height: 10rem" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button class="btn btn-light btn-xl" type="submit">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
